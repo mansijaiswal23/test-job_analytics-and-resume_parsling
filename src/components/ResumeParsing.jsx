@@ -42,9 +42,9 @@ const ResumeParsing = () => {
       // Mock auto-fill feature - in real app would call API
       setTimeout(() => {
         setFormData({
-          name: 'John Doe',
-          email: 'john.doe@example.com',
-          phone: '(555) 123-4567',
+          name: 'Aman Raj',
+          email: 'amanraj@example.com',
+          phone: '(+91) 87123-47567',
           education: 'Bachelor of Science in Computer Science',
           experience: '3 years as Frontend Developer',
           skills: 'JavaScript, React, Node.js'

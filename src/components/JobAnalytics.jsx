@@ -58,8 +58,10 @@ const JobAnalytics = () => {
         Job Analytics
       </h1>
 
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex gap-2 flex-1">
+      {/* Filter + Search + Sort */}
+      <div className="relative z-0 overflow-visible">
+      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-4">
+        <div className="flex flex-col sm:flex-row gap-3 flex-1">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
             <Input
@@ -80,17 +82,21 @@ const JobAnalytics = () => {
           </div>
         </div>
         <Select value={sortBy} onValueChange={setSortBy}>
-          <SelectTrigger className="w-[200px] rounded-full border-2 border-rose-200 focus:border-rose-400 shadow-md">
+          <SelectTrigger className="w-full sm:w-[200px] rounded-full border-2 border-rose-200 focus:border-rose-400 shadow-md">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
-          <SelectContent className="bg-white border border-rose-200 rounded-xl shadow-lg">
+          <SelectContent side="bottom"
+           sideOffset={8}  
+           position="popper"
+           className=" z-[9999] bg-white border border-rose-200 rounded-xl shadow-lg">
             <SelectItem value="title">Job Title</SelectItem>
             <SelectItem value="location">Location</SelectItem>
             <SelectItem value="company">Company</SelectItem>
           </SelectContent>
         </Select>
       </div>
-
+</div>
+      {/* Job Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {jobs.length > 0 ? (
           jobs.map((job, index) => (

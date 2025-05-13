@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import JobAnalytics from './JobAnalytics';
 import ResumeParsing from './ResumeParsing';
 import { motion } from 'framer-motion';
-import LoginButton from './LoginButton';  // Correct import path
+ // Correct import path
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('job-analytics');
@@ -21,10 +21,7 @@ const Dashboard = () => {
           🧵 Dashboard
         </h1>
 
-        {/* Add the LoginButton here */}
-        <div className="flex justify-center mb-6">
-          <LoginButton />  
-        </div>
+       
 
         <Tabs
           value={activeTab}

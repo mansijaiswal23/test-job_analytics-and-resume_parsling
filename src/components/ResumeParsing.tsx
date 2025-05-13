@@ -44,8 +44,8 @@ const ResumeParsing = () => {
       });
       setTimeout(() => {
         const mockParsedData = {
-          name: 'John Doe',
-          email: 'john.doe@example.com',
+          name: 'Aman Raj',
+          email: 'rajaman@example.com',
           phone: '(555) 123-4567',
           experience: '5 years of experience in software development',
           education: 'BS in Computer Science, University of Technology',
@@ -74,7 +74,7 @@ const ResumeParsing = () => {
   };
 
   return (
-    <motion.div
+    <motion.div 
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -100,12 +100,12 @@ const ResumeParsing = () => {
               <Label htmlFor="resume" className="text-lg font-medium text-gray-800">
                 Upload Resume
               </Label>
-              <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <div className="flex flex-col sm:flex-row gap-4 items-center w-full flex-wrap">
                 <motion.label
                   htmlFor="resume"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="block border-2 border-dashed border-blue-400 hover:bg-blue-100/30 bg-blue-50/20 rounded-xl p-6 text-center cursor-pointer transition shadow-sm w-full sm:w-auto"
+                  className="w-full sm:w-auto flex-1 border-dashed border-blue-400 hover:bg-blue-100/30 bg-blue-50/20 rounded-xl p-6 text-center cursor-pointer transition shadow-sm "
                 >
                   <input
                     id="resume"
@@ -116,7 +116,7 @@ const ResumeParsing = () => {
                   />
                   <div className="flex flex-col items-center">
                     <Upload className="h-8 w-8 text-blue-600 mb-2" />
-                    <span className="text-sm font-semibold text-gray-700">
+                    <span className="text-sm font-semibold text-gray-700 text-wrap break-all">
                       {file ? file.name : 'Click to upload or drag and drop'}
                     </span>
                     <span className="text-xs text-muted-foreground mt-1">
@@ -126,7 +126,7 @@ const ResumeParsing = () => {
                 </motion.label>
 
                 {file && (
-                  <motion.div whileHover={{ scale: 1.1 }} className="flex gap-2">
+                  <motion.div whileHover={{ scale: 1.1 }} className="flex gap-2 mt-4 sm:mt-0">
                     <Button variant="outline" size="icon" onClick={handleDownload}>
                       <Download className="h-5 w-5" />
                     </Button>
@@ -210,22 +210,22 @@ const ResumeParsing = () => {
                 </motion.div>
 
                 <motion.div
-                  className="flex justify-end gap-3 pt-6"
+                  className="flex flex-col sm:flex-row justify-end gap-3 pt-6"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <motion.div whileHover={{ scale: 1.05 }}>
+                  <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
                     <Button
                       onClick={handleSave}
-                      className="bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-md hover:shadow-lg transition"
+                      className="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-md hover:shadow-lg transition"
                     >
                       <Save className="h-4 w-4 mr-2" />
                       Save Resume
                     </Button>
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }}>
-                    <Button onClick={handleDownload} variant="outline">
+                  <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
+                    <Button onClick={handleDownload} variant="outline" className="w-full sm:w-auto">
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>

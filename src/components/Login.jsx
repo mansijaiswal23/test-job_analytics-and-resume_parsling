@@ -49,11 +49,11 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-[calc(100vh-12rem)] px-4 py-6 md:py-12 bg-gradient-to-b from-indigo-600 to-purple-600 animate-gradient">
-      <Card className="w-full max-w-md border-none rounded-xl shadow-2xl overflow-hidden bg-white">
+      <Card className="w-full max-w-md border-none rounded-xl shadow-2xl overflow-hidden bg-black">
         <div className="absolute h-2 w-full bg-gradient-to-r from-indigo-500 to-purple-500 top-0 left-0 rounded-t-xl"></div>
         <CardHeader className="space-y-2 pb-6 pt-8">
           <CardTitle className="text-2xl md:text-4xl font-bold text-center text-gray-800">Welcome Back</CardTitle>
-          <CardDescription className="text-center text-gray-600">
+          <CardDescription className="text-center text--600">
             Enter your credentials to access your account
           </CardDescription>
         </CardHeader>
@@ -65,6 +65,7 @@ const Login = () => {
                 id="email"
                 type="email"
                 placeholder="name@example.com"
+                autoComplete="username"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="h-12 text-base border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400 transition-all duration-300 rounded-md shadow-md"
@@ -77,6 +78,7 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="••••••••"
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="h-12 text-base border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400 transition-all duration-300 rounded-md shadow-md"
