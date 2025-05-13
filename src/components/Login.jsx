@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -49,58 +48,56 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[calc(100vh-12rem)] px-4 py-6 md:py-12 bg-gradient-to-b from-white to-slate-100">
-      <Card className="w-full max-w-md border-navy-200 shadow-lg overflow-hidden">
-        <div className="absolute h-2 w-full bg-gradient-to-r from-navy-400 to-navy-600 top-0 left-0"></div>
+    <div className="flex justify-center items-center min-h-[calc(100vh-12rem)] px-4 py-6 md:py-12 bg-gradient-to-b from-indigo-600 to-purple-600 animate-gradient">
+      <Card className="w-full max-w-md border-none rounded-xl shadow-2xl overflow-hidden bg-white">
+        <div className="absolute h-2 w-full bg-gradient-to-r from-indigo-500 to-purple-500 top-0 left-0 rounded-t-xl"></div>
         <CardHeader className="space-y-2 pb-6 pt-8">
-          <CardTitle className="text-xl md:text-3xl font-bold text-center text-navy-700">Welcome Back</CardTitle>
-          <CardDescription className="text-center text-navy-500">
+          <CardTitle className="text-2xl md:text-4xl font-bold text-center text-gray-800">Welcome Back</CardTitle>
+          <CardDescription className="text-center text-gray-600">
             Enter your credentials to access your account
           </CardDescription>
         </CardHeader>
         <CardContent className="pb-8">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm md:text-base text-navy-600 font-medium">Email</Label>
+              <Label htmlFor="email" className="text-base text-gray-700 font-medium">Email</Label>
               <Input
                 id="email"
                 type="email"
                 placeholder="name@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-9 md:h-12 text-sm md:text-base border-navy-200 focus:border-navy-400 transition-all duration-200"
+                className="h-12 text-base border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400 transition-all duration-300 rounded-md shadow-md"
               />
-              {errors.email && <p className="text-xs md:text-sm text-red-500">{errors.email}</p>}
+              {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-sm md:text-base text-navy-600 font-medium">Password</Label>
+              <Label htmlFor="password" className="text-base text-gray-700 font-medium">Password</Label>
               <Input
                 id="password"
                 type="password"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="h-9 md:h-12 text-sm md:text-base border-navy-200 focus:border-navy-400 transition-all duration-200"
+                className="h-12 text-base border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400 transition-all duration-300 rounded-md shadow-md"
               />
-              {errors.password && <p className="text-xs md:text-sm text-red-500">{errors.password}</p>}
+              {errors.password && <p className="text-sm text-red-500">{errors.password}</p>}
             </div>
             <div className="flex justify-end">
-              <a href="#" className="text-xs md:text-sm text-navy-600 hover:text-navy-800 transition-colors">
-                Forgot password?
-              </a>
+              <a href="#" className="text-sm text-indigo-600 hover:text-indigo-800 transition-colors">Forgot password?</a>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex flex-col gap-3 pb-8">
           <Button 
-            className="w-full bg-navy-600 hover:bg-navy-700 h-9 md:h-12 text-sm md:text-base transition-all duration-200" 
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white h-12 text-base transition-all duration-300 rounded-md shadow-md"
             onClick={handleSubmit}
           >
             Sign In
           </Button>
-          <p className="text-xs md:text-sm text-center mt-2 text-navy-500">
+          <p className="text-sm text-center mt-2 text-gray-600">
             Don't have an account?{" "}
-            <a href="#" className="text-navy-600 hover:text-navy-800 hover:underline transition-colors font-medium">
+            <a href="#" className="text-indigo-600 hover:text-indigo-800 hover:underline transition-colors font-medium">
               Sign up
             </a>
           </p>
